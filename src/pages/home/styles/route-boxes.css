@@ -1,0 +1,24 @@
+.route-box-container {
+    /*background-color: var(--primary-500);*/
+    background-color: white;
+    box-shadow: var(--shadow-normal);
+    border-radius: var(--radius-md);
+    color: var(--primary-500);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+    row-gap: var(--space-md);
+}
+
+.route-boxes-container {
+    display: grid;
+    grid-template-rows: repeat(3, 160px);
+    grid-template-columns: repeat(2, 160px);
+    justify-content: space-between;
+    align-content: space-between;
+    height: 100%;
+    width: 34vw;
+}

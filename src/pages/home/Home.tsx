@@ -1,3 +1,12 @@
+import "./styles/home.css";
+import RouteBoxes from "./components/RouteBoxes";
+import Overview from "./components/Overview";
+
 export default function Home() {
-    return <h1>Home</h1>;
+  return (
+    <div className="home-page page">
+      <Overview />
+      <RouteBoxes />
+    </div>
+  );
 }

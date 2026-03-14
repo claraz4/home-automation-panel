@@ -1,0 +1,28 @@
+.overview-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xs);
+    flex: 1;
+}
+
+.welcome-text {
+    color: var(--primary-500);
+}
+
+.day-text {
+    color: var(--gray-500);
+    font-weight: normal;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs);
+}
+
+.time-text {
+    font-size: 2.9em;
+    color: var(--gray-700);
+}
