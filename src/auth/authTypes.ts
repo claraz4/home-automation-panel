@@ -15,4 +15,5 @@ export type AuthAction =
   | { type: "SIGN_IN" }
   | { type: "SIGN_OUT" }
   | { type: "SET_USER_INFO"; payload: any }
-  | { type: "RESTORE_DONE" };
+  | { type: "RESTORE_DONE" }
+  | { type: "LOADING" };

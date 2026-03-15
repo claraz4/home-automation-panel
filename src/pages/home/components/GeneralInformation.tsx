@@ -1,14 +1,36 @@
 import { FaArrowTrendDown } from "react-icons/fa6";
 import "../styles/general-information.css";
 import TodaySchedules from "./TodaySchedules";
+import { householdApi } from "../../../api/api";
+import CurrentSourceDTO from "../types/CurrentSourceDTO";
+import { useEffect, useState } from "react";
 
+// TODO: Current consumption API not implemented it yet. Add it when done
 export default function GeneralInformation() {
+  const [currentSource, setCurrentSource] = useState<CurrentSourceDTO | null>(
+    null,
+  );
+
+  const getSourceInfo = async () => {
+    try {
+      const { data } =
+        await householdApi.get<CurrentSourceDTO>("/source/current");
+      setCurrentSource(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    void getSourceInfo();
+  }, []);
+
   return (
     <div className="general-info-container">
       <div className="source-consumption-container">
         <div className="source-consumption-info">
-          <p>Private Generator</p>
-          <h3>220 V</h3>
+          <p>{currentSource?.name}</p>
+          <h3>{`${currentSource?.voltage} V`}</h3>
           <div className="source-status-container">
             <div className="status-circle" />
             <p style={{ color: "var(--success)" }}>Stable</p>

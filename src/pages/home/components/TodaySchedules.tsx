@@ -1,17 +1,45 @@
 import { GoClock } from "react-icons/go";
+import { api } from "../../../api/api";
+import { ScheduleDTO, SchedulesDTO } from "../types/SchedulesDTO";
+import { useEffect, useState } from "react";
+import dayjs from "dayjs";
 
 export default function TodaySchedules() {
+  const [todaySchedules, setTodaySchedules] = useState<ScheduleDTO[]>([]);
+
+  const fetchTodaySchedules = async () => {
+    try {
+      const { data } = await api.get<SchedulesDTO>("/schedules/day", {
+        params: {
+          date: dayjs().format("YYYY-MM-DD"),
+        },
+      });
+      setTodaySchedules(data.schedules);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    void fetchTodaySchedules();
+  }, []);
+
   return (
     <div className="schedules-container">
       <h5 style={{ color: "white" }}>Today's Schedules</h5>
-      <div>
-        <div className="schedule-container">
-          <GoClock size={30} color="white" />
-          <div>
-            <p>Schedule Name</p>
-            <p className="schedule-info">9:00 • 2 Devices</p>
+      <div className="all-schedules">
+        {todaySchedules.map((schedule) => (
+          <div className="schedule-container" key={schedule.id}>
+            <GoClock size={30} color="white" />
+            <div>
+              <p>{schedule.name}</p>
+              <p className="schedule-info">
+                {dayjs(schedule.time).format("HH:mm")} • {schedule.deviceCount}{" "}
+                Device{schedule.deviceCount === 1 ? "" : "s"}
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ export function AuthProvider({ children }: Props) {
   useEffect(() => {
     const run = async () => {
       try {
+        dispatch({ type: "LOADING" });
         const authenticated = await keycloakConfig.init({
           onLoad: "check-sso",
         });

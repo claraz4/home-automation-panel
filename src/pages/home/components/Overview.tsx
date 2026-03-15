@@ -2,9 +2,11 @@ import "../styles/overview.css";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import GeneralInformation from "./GeneralInformation";
+import { useAuth } from "../../../auth/useAuth";
 
 export default function Overview() {
   const [date, setDate] = useState(dayjs());
+  const { state } = useAuth();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,7 +22,7 @@ export default function Overview() {
     <div className="overview-container">
       <div className="title-container">
         <div>
-          <h3 className="welcome-text">Welcome, User!</h3>
+          <h3 className="welcome-text">{`Welcome, ${state.userInfo?.givenName}!`}</h3>
           <h6 className="day-text">{date.format("dddd, MMMM DD, YYYY")}</h6>
         </div>
         <h1 className="time-text">{date.format("HH:mm")}</h1>

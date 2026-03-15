@@ -4,7 +4,8 @@ import { AuthInterceptorProvider } from "./auth/AuthInterceptorProvider";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Home from "./pages/home/Home";
 import Login from "./pages/auth/Login";
-import { keycloakConfig } from "./auth/keycloak";
+import { useEffect } from "react";
+import { detectBackend } from "./api/backendUtils";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -15,6 +16,19 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
+  useEffect(() => {
+    const handleOnline = async () => {
+      await detectBackend();
+    };
+
+    void handleOnline();
+
+    window.addEventListener("online", handleOnline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+    };
+  }, []);
+
   return (
     <AuthProvider>
       <AuthInterceptorProvider>

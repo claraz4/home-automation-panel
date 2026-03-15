@@ -3,13 +3,13 @@ import { AuthAction, AuthState } from "./authTypes";
 export const initialAuthState: AuthState = {
   isSignedIn: false,
   userInfo: null,
-  isLoading: false,
+  isLoading: true,
 };
 
 export function authReducer(state: AuthState, action: AuthAction): AuthState {
   switch (action.type) {
     case "SIGN_IN":
-      return { ...state, isSignedIn: true, isLoading: true };
+      return { ...state, isSignedIn: true };
 
     case "SET_USER_INFO":
       return {
@@ -28,6 +28,9 @@ export function authReducer(state: AuthState, action: AuthAction): AuthState {
 
     case "RESTORE_DONE":
       return { ...state, isLoading: false };
+
+    case "LOADING":
+      return { ...state, isLoading: true };
 
     default:
       return state;
