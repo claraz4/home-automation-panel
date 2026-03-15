@@ -1,0 +1,52 @@
+.container {
+    background-color: var(--primary-500);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xl);
+    width: 50%;
+}
+
+.icon-container {
+    border: 1px solid white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.2);
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.heading {
+    color: white;
+    margin: 0;
+}
+
+.subtext {
+    color: rgba(255, 255, 255, 0.78);
+    text-align: center;
+    margin: 0;
+}
+
+.button-signin {
+    width: 300px;
+    margin-top: 40px;
+}

@@ -3,7 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router } from "react-router-dom";
+import "./styles/variables.css";
+import "./styles/globals.css";
+import "@fontsource/poppins";
+import "./App.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
@@ -11,9 +14,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </React.StrictMode>,
 );
 
