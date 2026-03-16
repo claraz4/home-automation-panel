@@ -12,6 +12,8 @@ export function AuthProvider({ children }: Props) {
 
   // Sign in
   useEffect(() => {
+    if (keycloakConfig.didInitialize) return;
+
     const run = async () => {
       try {
         dispatch({ type: "LOADING" });

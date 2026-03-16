@@ -1,0 +1,18 @@
+.navbar-container {
+    border-radius: var(--radius-md);
+    background-color: var(--primary-500);
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: var(--space-xs);
+    align-items: center;
+}
+
+.selected-icon-container {
+    background-color: white;
+    padding: var(--space-xs);
+    padding-bottom: var(--space-xxxs);
+    border-radius: var(--radius-sm);
+}

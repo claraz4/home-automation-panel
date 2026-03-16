@@ -20,7 +20,6 @@ export function authReducer(state: AuthState, action: AuthAction): AuthState {
           familyName: action.payload.family_name,
           email: action.payload.email,
         },
-        isLoading: false,
       };
 
     case "SIGN_OUT":
