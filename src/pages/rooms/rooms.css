@@ -1,0 +1,14 @@
+.rooms-page {
+    padding: var(--space-lg) var(--space-xxl);
+    width: 100%;
+    height: 100%;
+}
+
+.rooms-list-container {
+    margin-top: var(--space-xl);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    gap: var(--space-md);
+}

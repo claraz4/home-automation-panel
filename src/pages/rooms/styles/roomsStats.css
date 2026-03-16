@@ -1,0 +1,20 @@
+.room-stats-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--space-md);
+    padding: 0 var(--space-md);
+    border-right: solid 2px var(--gray-300);
+}
+
+.stats-container:last-child {
+    padding-right: 0;
+    border-right: none;
+}

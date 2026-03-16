@@ -1,5 +1,4 @@
 .route-box-container {
-    /*background-color: var(--primary-500);*/
     background-color: white;
     box-shadow: var(--shadow-normal);
     border-radius: var(--radius-md);
@@ -8,8 +7,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     row-gap: var(--space-md);
 }
 

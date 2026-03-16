@@ -42,6 +42,7 @@ export default function Navbar() {
           <Link
             to={route}
             className={isSelected ? "selected-icon-container" : ""}
+            key={idx}
           >
             <Icon
               size={25}
