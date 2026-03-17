@@ -1,0 +1,18 @@
+.plug-toggler-container {
+    background-color: transparent;
+}
+
+.plug-overview-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-sm);
+    align-items: center;
+}
+
+.plug-overview-elements-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-sm);
+    width: 100%;
+}

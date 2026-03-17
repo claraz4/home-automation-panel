@@ -48,7 +48,7 @@ export default function SingleRoom() {
   }, []);
 
   const handleClick = (plugId: number) => {
-    navigate(`/rooms/${roomId}/plug/${plugId}`);
+    navigate(`/plugs/${plugId}`);
   };
 
   if (!roomInfo) return <p>Loading</p>;

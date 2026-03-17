@@ -4,3 +4,8 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.subtitle-text {
+    margin-top: calc(-1 * var(--space-xxs));
+    color: var(--gray-500)
+}

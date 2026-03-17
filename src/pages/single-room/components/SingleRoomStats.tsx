@@ -1,9 +1,9 @@
 import { FaBolt, FaPlug } from "react-icons/fa6";
-import { MdDevices } from "react-icons/md";
 import { useEffect, useState } from "react";
 import StatsTitle, {
   StatsElement,
 } from "../../../shared/components/stats-title/StatsTitle";
+import { isStatFound } from "../../../shared/components/stats-title/statsHelper";
 
 interface Props {
   totalPlugs: number;
@@ -21,15 +21,25 @@ export default function SingleRoomStats({ totalPlugs }: Props) {
   ]);
 
   useEffect(() => {
-    setStats((prev) => [
-      ...prev,
-      {
-        title: "Plugs",
-        subtitle: `${totalPlugs}`,
-        icon: FaPlug,
-        iconSize: 35,
-      },
-    ]);
+    setStats((prev) => {
+      const statFound = isStatFound("Plugs", prev);
+
+      if (!statFound) {
+        return [
+          ...prev,
+          {
+            title: "Plugs",
+            subtitle: "" + totalPlugs,
+            icon: FaPlug,
+            iconSize: 35,
+          },
+        ];
+      } else {
+        return prev.map((s) =>
+          s.title === "Plugs" ? { ...s, subtitle: "" + totalPlugs } : s,
+        );
+      }
+    });
   }, [totalPlugs]);
 
   return <StatsTitle stats={stats} />;

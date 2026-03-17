@@ -1,18 +1,32 @@
 import { GoClock } from "react-icons/go";
 import { api } from "../../../api/api";
-import { ScheduleDTO, SchedulesDTO } from "../types/SchedulesDTO";
+import {
+  ScheduleDTO,
+  SchedulesDTO,
+} from "../../../pages/home/types/SchedulesDTO";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
+import "./todaySchedules.css";
+import arrayToParams from "../../../helpers/arrayToParams";
 
-export default function TodaySchedules() {
+interface Props {
+  containerStyleClass?: string;
+  plugIds?: number[];
+}
+
+export default function TodaySchedules({
+  containerStyleClass,
+  plugIds,
+}: Props) {
   const [todaySchedules, setTodaySchedules] = useState<ScheduleDTO[]>([]);
 
   const fetchTodaySchedules = async () => {
     try {
+      const params = arrayToParams("PlugIds", plugIds);
+      params.append("date", dayjs().format("YYYY-MM-DD"));
+
       const { data } = await api.get<SchedulesDTO>("/schedules/day", {
-        params: {
-          date: dayjs().format("YYYY-MM-DD"),
-        },
+        params,
       });
       setTodaySchedules(data.schedules);
     } catch (error) {
@@ -25,7 +39,9 @@ export default function TodaySchedules() {
   }, []);
 
   return (
-    <div className="schedules-container">
+    <div
+      className={`schedules-container${containerStyleClass ? ` ${containerStyleClass}` : ""}`}
+    >
       <h5 style={{ color: "white" }}>Today's Schedules</h5>
       <div className="all-schedules">
         {todaySchedules.map((schedule) => (

@@ -11,6 +11,11 @@
     justify-content: space-between;
 }
 
+.invert-element-box-container {
+    background-color: white;
+    box-shadow: var(--shadow-normal);
+}
+
 .element-icon-container {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -25,6 +30,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    padding-left: var(--space-xxs);
 }
 
 .element-title {
@@ -55,4 +61,13 @@
 
 .status-text {
     color: rgba(255, 255, 255, 0.7);
+}
+
+.invert-title {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.invert-subtitle {
+    color: var(--gray-500);
 }
