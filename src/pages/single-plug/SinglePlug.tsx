@@ -9,7 +9,7 @@ import StatsTitle, {
 import { MdDevices } from "react-icons/md";
 import { FaBolt } from "react-icons/fa6";
 import "./styles/singlePlug.css";
-import PlugOverview from "../single-room/components/PlugOverview";
+import PlugOverview from "./components/PlugOverview";
 import TodaySchedules from "../../shared/components/today-schedules/TodaySchedules";
 
 export default function SinglePlug() {
@@ -74,7 +74,11 @@ export default function SinglePlug() {
         subtitle={plugInfo.isConstant ? "Constant" : undefined}
       />
       <div className="single-plug-content-container">
-        <PlugOverview plugInfo={plugInfo} togglePlugState={togglePlugState} />
+        <PlugOverview
+          plugInfo={plugInfo}
+          togglePlugState={togglePlugState}
+          getPlugInfo={getPlugInfo}
+        />
         <TodaySchedules plugIds={[plugInfo.id]} />
       </div>
     </div>

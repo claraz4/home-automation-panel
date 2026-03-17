@@ -1,0 +1,28 @@
+.timeout-options-container {
+    padding: var(--space-xl);
+    padding-top: var(--space-xxl);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xl);
+}
+
+.timeout-options-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xl);
+}
+
+.timeout-options-button {
+    background-color: var(--primary-500);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: calc(-1 * var(--space-xxs)) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.timeout-options-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

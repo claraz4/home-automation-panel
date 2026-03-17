@@ -1,0 +1,40 @@
+.chip-options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    column-gap: var(--space-md);
+    row-gap: var(--space-md);
+}
+
+.chip-options-item {
+    width: 100%;
+}
+
+.chip-options-spacer {
+    visibility: hidden;
+}
+
+.chip-container {
+    background-color: var(--gray-400);
+    width: 100%;
+    padding: var(--space-xs) 0;
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+}
+
+.chip-options-text {
+    font-weight: 400;
+    color: white;
+}
+
+.chip-options-selected {
+    background-color: var(--primary-500);
+}
+
+.chip-options-text-selected {
+    font-weight: 500;
+    color: white;
+}
