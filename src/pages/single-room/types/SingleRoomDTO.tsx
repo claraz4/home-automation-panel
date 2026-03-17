@@ -1,8 +1,4 @@
-export interface RoomsDTO {
-  rooms: RoomDTO[];
-}
-
-export interface RoomDTO {
+export interface SingleRoomDTO {
   roomId: number;
   name: string;
   roomType: string;

@@ -95,3 +95,9 @@ button:hover {
     width: 100%;
     padding: var(--space-md);
 }
+
+.navbar-page {
+    padding: var(--space-lg) var(--space-xxl);
+    width: 100%;
+    height: 100%;
+}

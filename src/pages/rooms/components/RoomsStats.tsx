@@ -1,15 +1,9 @@
-import "../styles/roomsStats.css";
 import { FaDoorClosed, FaBolt } from "react-icons/fa6";
 import { MdDevices } from "react-icons/md";
-import { IconType } from "react-icons";
 import { useState } from "react";
-
-interface StatsElement {
-  title: string;
-  subtitle: string;
-  icon: IconType;
-  iconSize?: number;
-}
+import StatsTitle, {
+  StatsElement,
+} from "../../../shared/components/stats-title/StatsTitle";
 
 // TODO: don't make the stats static
 export default function RoomsStats() {
@@ -32,21 +26,5 @@ export default function RoomsStats() {
     },
   ]);
 
-  return (
-    <div className="room-stats-container">
-      {stats.map((stats, idx) => {
-        const Icon = stats.icon;
-
-        return (
-          <div key={idx} className="stats-container">
-            <Icon size={stats.iconSize ?? 40} color="var(--primary-500)" />
-            <div>
-              <p>{stats.title}</p>
-              <h6>{stats.subtitle}</h6>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+  return <StatsTitle stats={stats} />;
 }

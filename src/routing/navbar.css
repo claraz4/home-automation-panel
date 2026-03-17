@@ -2,17 +2,22 @@
     border-radius: var(--radius-md);
     background-color: var(--primary-500);
     height: 100%;
-    width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: var(--space-xs);
+    justify-content: center;
+    row-gap: var(--space-xl);
     align-items: center;
+    min-width: 62px;
+    max-width: 62px;
 }
 
-.selected-icon-container {
+.selected-navbar-icon-container {
     background-color: white;
+}
+
+.navbar-icon-container {
     padding: var(--space-xs);
-    padding-bottom: var(--space-xxxs);
+    border: none;
     border-radius: var(--radius-sm);
+    padding-bottom: var(--space-xxxs);
 }

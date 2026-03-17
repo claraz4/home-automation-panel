@@ -1,4 +1,4 @@
-.room-box-container {
+.element-box-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -8,9 +8,10 @@
     cursor: pointer;
     padding: var(--space-sm);
     column-gap: var(--space-sm);
+    justify-content: space-between;
 }
 
-.room-icon-container {
+.element-icon-container {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     display: flex;
@@ -19,18 +20,39 @@
     padding: var(--space-sm);
 }
 
-.room-info-container {
+.element-info-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
 }
 
-.room-name {
+.element-title {
     color: white;
     font-weight: 500;
 }
 
-.room-devices {
+.element-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    white-space: pre;
+}
+
+.element-boxes-list-container {
+    margin-top: var(--space-xl);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    gap: var(--space-md);
+}
+
+.element-box-status-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: var(--space-xxs);
+}
+
+.status-text {
     color: rgba(255, 255, 255, 0.7);
 }

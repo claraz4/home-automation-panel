@@ -10,7 +10,7 @@ import {
 import { IconType } from "react-icons";
 import "./navbar.css";
 import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface IconElement {
   route: string;
@@ -39,16 +39,20 @@ export default function Navbar() {
         const isSelected = pathname === route;
 
         return (
-          <Link
+          <NavLink
             to={route}
-            className={isSelected ? "selected-icon-container" : ""}
+            className={({ isActive }) =>
+              `navbar-icon-container ${isActive ? "selected-navbar-icon-container" : ""}`
+            }
             key={idx}
           >
-            <Icon
-              size={25}
-              color={isSelected ? "var(--primary-500)" : "white"}
-            />
-          </Link>
+            {({ isActive }) => (
+              <Icon
+                size={25}
+                color={isActive ? "var(--primary-500)" : "white"}
+              />
+            )}
+          </NavLink>
         );
       })}
     </div>

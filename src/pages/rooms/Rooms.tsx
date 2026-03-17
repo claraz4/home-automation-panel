@@ -1,5 +1,5 @@
-import "./rooms.css";
-import PageTitle from "../../shared/page-title/PageTitle";
+import "./styles/rooms.css";
+import PageTitle from "../../shared/components/page-title/PageTitle";
 import RoomsStats from "./components/RoomsStats";
 import { useEffect, useState } from "react";
 import { api } from "../../api/api";
@@ -23,9 +23,9 @@ export default function Rooms() {
   }, []);
 
   return (
-    <div className="rooms-page">
+    <div className="navbar-page">
       <PageTitle title="Rooms" rightComponent={<RoomsStats />} />
-      <div className="rooms-list-container">
+      <div className="element-boxes-list-container">
         {rooms.length > 0 &&
           rooms.map((room) => <RoomBox key={room.roomId} room={room} />)}
       </div>

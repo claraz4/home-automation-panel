@@ -9,6 +9,7 @@ import { detectBackend } from "./api/backendUtils";
 import Navbar from "./routing/Navbar";
 import Rooms from "./pages/rooms/Rooms";
 import MainLayout from "./routing/NavbarLayout";
+import SingleRoom from "./pages/single-room/SingleRoom";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -18,7 +19,10 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       {
         element: <MainLayout />,
-        children: [{ path: "/rooms", element: <Rooms /> }],
+        children: [
+          { path: "/rooms", element: <Rooms /> },
+          { path: "/rooms/:roomId", element: <SingleRoom /> },
+        ],
       },
     ],
   },
