@@ -1,6 +1,6 @@
 import { FaArrowTrendDown } from "react-icons/fa6";
 import "../styles/general-information.css";
-import TodaySchedules from "../../../shared/components/today-schedules/TodaySchedules";
+import TodaySchedules from "../../../shared/components/schedules-list/SchedulesList";
 import { householdApi } from "../../../api/api";
 import CurrentSourceDTO from "../types/CurrentSourceDTO";
 import { useEffect, useState } from "react";

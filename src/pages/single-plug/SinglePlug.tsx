@@ -10,7 +10,7 @@ import { MdDevices } from "react-icons/md";
 import { FaBolt } from "react-icons/fa6";
 import "./styles/singlePlug.css";
 import PlugOverview from "./components/PlugOverview";
-import TodaySchedules from "../../shared/components/today-schedules/TodaySchedules";
+import TodaySchedules from "../../shared/components/schedules-list/SchedulesList";
 
 export default function SinglePlug() {
   const { plugId } = useParams();

@@ -5,9 +5,17 @@ interface Props {
   title: string;
   rightComponent?: ReactNode;
   subtitle?: string;
+  hasAddButton?: boolean;
+  onAdd?: () => void;
 }
 
-export default function PageTitle({ title, rightComponent, subtitle }: Props) {
+export default function PageTitle({
+  title,
+  rightComponent,
+  subtitle,
+  hasAddButton = false,
+  onAdd,
+}: Props) {
   return (
     <div className="page-title-container">
       <div>
@@ -15,6 +23,11 @@ export default function PageTitle({ title, rightComponent, subtitle }: Props) {
         {subtitle && <p className="subtitle-text">{subtitle}</p>}
       </div>
       {rightComponent}
+      {hasAddButton && onAdd && (
+        <button className="add-button" onClick={onAdd}>
+          +
+        </button>
+      )}
     </div>
   );
 }

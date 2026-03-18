@@ -1,0 +1,14 @@
+.schedules-page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+    height: 100%;
+}
+
+.schedules-info-container {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-xxxl);
+    height: 100%;
+}

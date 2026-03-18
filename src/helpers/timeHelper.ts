@@ -1,4 +1,5 @@
 import { ChipOption } from "../shared/components/chip-options/ChipOptions";
+import dayjs from "dayjs";
 
 export function HHMMSSToHoursMinutes(time: string): {
   hours: number;
@@ -34,4 +35,12 @@ export function minutesToHHMMSS(minutes: number): string {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:00`;
+}
+
+export function isDayScheduled(
+  currentDay: dayjs.Dayjs,
+  schedules: string[],
+): boolean {
+  const currentDayFormatted = dayjs(currentDay).format("YYYY-MM-DD");
+  return schedules.includes(currentDayFormatted);
 }

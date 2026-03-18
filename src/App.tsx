@@ -10,6 +10,7 @@ import Rooms from "./pages/rooms/Rooms";
 import MainLayout from "./routing/NavbarLayout";
 import SingleRoom from "./pages/single-room/SingleRoom";
 import SinglePlug from "./pages/single-plug/SinglePlug";
+import Schedules from "./pages/schedules/Schedules";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
           { path: "/rooms", element: <Rooms /> },
           { path: "/rooms/:roomId", element: <SingleRoom /> },
           { path: "/plugs/:plugId", element: <SinglePlug /> },
+          { path: "/schedules", element: <Schedules /> },
         ],
       },
     ],

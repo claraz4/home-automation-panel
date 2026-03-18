@@ -5,46 +5,50 @@ import {
   SchedulesDTO,
 } from "../../../pages/home/types/SchedulesDTO";
 import { useEffect, useState } from "react";
-import dayjs from "dayjs";
-import "./todaySchedules.css";
+import dayjs, { Dayjs } from "dayjs";
+import "./schedulesList.css";
 import arrayToParams from "../../../helpers/arrayToParams";
 
 interface Props {
   containerStyleClass?: string;
   plugIds?: number[];
+  title?: string;
+  date?: Dayjs;
 }
 
-export default function TodaySchedules({
+export default function SchedulesList({
   containerStyleClass,
   plugIds,
+  title = "Today Schedules",
+  date = dayjs(),
 }: Props) {
-  const [todaySchedules, setTodaySchedules] = useState<ScheduleDTO[]>([]);
+  const [schedules, setSchedules] = useState<ScheduleDTO[]>([]);
 
-  const fetchTodaySchedules = async () => {
+  const fetchSchedules = async () => {
     try {
       const params = arrayToParams("PlugIds", plugIds);
-      params.append("date", dayjs().format("YYYY-MM-DD"));
+      params.append("date", date.format("YYYY-MM-DD"));
 
       const { data } = await api.get<SchedulesDTO>("/schedules/day", {
         params,
       });
-      setTodaySchedules(data.schedules);
+      setSchedules(data.schedules);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    void fetchTodaySchedules();
-  }, []);
+    void fetchSchedules();
+  }, [date]);
 
   return (
     <div
       className={`schedules-container${containerStyleClass ? ` ${containerStyleClass}` : ""}`}
     >
-      <h5 style={{ color: "white" }}>Today's Schedules</h5>
+      <h5 style={{ color: "white" }}>{title}</h5>
       <div className="all-schedules">
-        {todaySchedules.map((schedule) => (
+        {schedules.map((schedule) => (
           <div className="schedule-container" key={schedule.id}>
             <GoClock size={30} color="white" />
             <div>

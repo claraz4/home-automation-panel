@@ -1,0 +1,27 @@
+.calendar-container {
+    border: 2px var(--primary-500) solid;
+    border-radius: var(--radius-sm);
+    font-family: 'Poppins', sans-serif;
+    box-shadow: var(--shadow-normal);
+    align-self: center;
+    width: 470px;
+}
+
+.tile-container {
+    border-radius: 0;
+    color: var(--text);
+}
+
+.tile-container-scheduled {
+    color: var(--primary-500);
+}
+
+.react-calendar__tile--now {
+    background-color: transparent;
+}
+
+.react-calendar__tile--active {
+    background: var(--primary-500);
+    color: white;
+    border-radius: var(--radius-sm);
+}
