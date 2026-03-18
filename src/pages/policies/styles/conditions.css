@@ -1,0 +1,13 @@
+.conditions-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: var(--space-md);
+}
+
+.condition-box-container {
+    background-color: var(--primary-500);
+    border-radius: var(--radius-sm);
+    color: white;
+    padding: var(--space-xxs) var(--space-md);
+}

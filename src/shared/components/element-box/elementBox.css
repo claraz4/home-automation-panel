@@ -71,3 +71,7 @@
 .invert-subtitle {
     color: var(--gray-500);
 }
+
+.policy-element-box-info-container {
+    row-gap: var(--space-sm);
+}

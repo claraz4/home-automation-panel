@@ -1,15 +1,18 @@
 import { IconType } from "react-icons";
 import "./elementBox.css";
 import { FaAngleRight } from "react-icons/fa6";
+import { ReactNode } from "react";
 
 interface Props {
   title: string;
   subtitle?: string;
+  subComponent?: ReactNode;
   icon?: IconType;
   onClick?: () => void;
   hasStatus?: boolean;
   status?: string;
   invert?: boolean;
+  infoContainerClass?: string;
 }
 
 export default function ElementBox({
@@ -19,7 +22,9 @@ export default function ElementBox({
   onClick,
   hasStatus = false,
   status,
+  subComponent,
   invert = false,
+  infoContainerClass,
 }: Props) {
   return (
     <div
@@ -32,13 +37,18 @@ export default function ElementBox({
         </div>
       )}
 
-      <div className="element-info-container">
+      <div
+        className={`element-info-container${infoContainerClass ? ` ${infoContainerClass}` : ""}`}
+      >
         <h6 className={`element-title${invert ? " invert-title" : ""}`}>
           {title}
         </h6>
-        <p className={`element-subtitle${invert ? " invert-subtitle" : ""}`}>
-          {subtitle}
-        </p>
+        {subtitle && (
+          <p className={`element-subtitle${invert ? " invert-subtitle" : ""}`}>
+            {subtitle}
+          </p>
+        )}
+        {subComponent}
       </div>
 
       {hasStatus && status && (

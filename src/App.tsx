@@ -11,6 +11,7 @@ import MainLayout from "./routing/NavbarLayout";
 import SingleRoom from "./pages/single-room/SingleRoom";
 import SinglePlug from "./pages/single-plug/SinglePlug";
 import Schedules from "./pages/schedules/Schedules";
+import Policies from "./pages/policies/Policies";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
           { path: "/rooms/:roomId", element: <SingleRoom /> },
           { path: "/plugs/:plugId", element: <SinglePlug /> },
           { path: "/schedules", element: <Schedules /> },
+          { path: "/policies", element: <Policies /> },
         ],
       },
     ],

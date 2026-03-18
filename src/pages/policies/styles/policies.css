@@ -1,0 +1,6 @@
+.policies-container,
+.policy-page {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+}
