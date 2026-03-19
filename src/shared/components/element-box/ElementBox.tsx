@@ -13,6 +13,9 @@ interface Props {
   status?: string;
   invert?: boolean;
   infoContainerClass?: string;
+  containerClass?: string;
+  iconSize?: number;
+  iconContainerClass?: string;
 }
 
 export default function ElementBox({
@@ -25,15 +28,23 @@ export default function ElementBox({
   subComponent,
   invert = false,
   infoContainerClass,
+  containerClass,
+  iconSize = 35,
+  iconContainerClass,
 }: Props) {
   return (
     <div
-      className={`element-box-container${invert ? " invert-element-box-container" : ""}`}
+      className={`element-box-container${invert ? " invert-element-box-container" : ""}${containerClass ? ` ${containerClass}` : ""}`}
       onClick={onClick}
     >
       {Icon && (
-        <div className="element-icon-container">
-          <Icon size={35} color={invert ? "var(--primary-500)" : "white"} />
+        <div
+          className={`element-icon-container${iconContainerClass ? ` ${iconContainerClass}` : ""}`}
+        >
+          <Icon
+            size={iconSize}
+            color={invert ? "var(--primary-500)" : "white"}
+          />
         </div>
       )}
 

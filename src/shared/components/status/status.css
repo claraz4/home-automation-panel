@@ -1,0 +1,5 @@
+.state-text {
+    color: white;
+    padding: var(--space-xxs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}

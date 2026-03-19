@@ -14,6 +14,8 @@ interface Props {
   plugIds?: number[];
   title?: string;
   date?: Dayjs;
+  setClickedScheduleId: (id: number) => void;
+  setShowScheduleInfo: (show: boolean) => void;
 }
 
 export default function SchedulesList({
@@ -21,6 +23,8 @@ export default function SchedulesList({
   plugIds,
   title = "Today Schedules",
   date = dayjs(),
+  setClickedScheduleId,
+  setShowScheduleInfo,
 }: Props) {
   const [schedules, setSchedules] = useState<ScheduleDTO[]>([]);
 
@@ -42,6 +46,11 @@ export default function SchedulesList({
     void fetchSchedules();
   }, [date]);
 
+  const handleClick = (id: number) => {
+    setClickedScheduleId(id);
+    setShowScheduleInfo(true);
+  };
+
   return (
     <div
       className={`schedules-container${containerStyleClass ? ` ${containerStyleClass}` : ""}`}
@@ -49,7 +58,11 @@ export default function SchedulesList({
       <h5 style={{ color: "white" }}>{title}</h5>
       <div className="all-schedules">
         {schedules.map((schedule) => (
-          <div className="schedule-container" key={schedule.id}>
+          <button
+            className="schedule-container"
+            key={schedule.id}
+            onClick={() => handleClick(schedule.id)}
+          >
             <GoClock size={30} color="white" />
             <div>
               <p>{schedule.name}</p>
@@ -58,7 +71,7 @@ export default function SchedulesList({
                 Device{schedule.deviceCount === 1 ? "" : "s"}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

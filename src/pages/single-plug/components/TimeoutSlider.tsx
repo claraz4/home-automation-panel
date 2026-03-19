@@ -107,41 +107,39 @@ export default function TimeoutSlider({
 
   return (
     <SliderScreen isOpen={isOpen} onClose={onClose}>
-      <div className="timeout-options-container">
-        <div className="timeout-options-section">
-          <div className="timeout-options-title">
-            <h3>Timeout</h3>
-            <button
-              onClick={sendTimeout}
-              className="timeout-options-button"
-              disabled={isUnchanged}
-            >
-              Confirm
-            </button>
-          </div>
-
-          <ChipOptions
-            options={timeoutOptions}
-            selectedOption={selectedOption}
-            setSelectedOption={handleSelectedOption}
-          />
+      <div className="timeout-options-section">
+        <div className="timeout-options-title">
+          <h3>Timeout</h3>
+          <button
+            onClick={sendTimeout}
+            className="timeout-options-button"
+            disabled={isUnchanged}
+          >
+            Confirm
+          </button>
         </div>
-        {isCustomSelected && (
-          <TimeSelector
-            maxHourValue={12}
-            minHourValue={0}
-            maxMinuteValue={59}
-            minMinuteValue={0}
-            stepHour={1}
-            stepMinute={5}
-            selectedHour={selectedCustomHour}
-            selectedMinute={selectedCustomMinute}
-            onSelectedHourChange={setSelectedCustomHour}
-            onSelectedMinuteChange={setSelectedCustomMinute}
-            padStart={1}
-          />
-        )}
+
+        <ChipOptions
+          options={timeoutOptions}
+          selectedOption={selectedOption}
+          setSelectedOption={handleSelectedOption}
+        />
       </div>
+      {isCustomSelected && (
+        <TimeSelector
+          maxHourValue={12}
+          minHourValue={0}
+          maxMinuteValue={59}
+          minMinuteValue={0}
+          stepHour={1}
+          stepMinute={5}
+          selectedHour={selectedCustomHour}
+          selectedMinute={selectedCustomMinute}
+          onSelectedHourChange={setSelectedCustomHour}
+          onSelectedMinuteChange={setSelectedCustomMinute}
+          padStart={1}
+        />
+      )}
     </SliderScreen>
   );
 }

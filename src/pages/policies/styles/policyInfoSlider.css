@@ -1,0 +1,10 @@
+.policy-info-subcontainer {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-sm);
+}
+
+.policy-info-hr {
+    margin-top: var(--space-sm);
+}

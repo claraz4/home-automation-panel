@@ -26,7 +26,7 @@
     top: 0;
     right: 0;
     height: 100%;
-    background: white;
+    background: var(--primary-50);
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -35,4 +35,21 @@
 
 .slider-overlay.open .slider-panel {
     transform: translateX(0);
+}
+
+.slider-content-container {
+    padding: var(--space-xl);
+    padding-top: var(--space-xxl);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xl);
+}
+
+.schedule-info-container,
+.policy-info-container {
+    width: 460px;
+    overflow-y: scroll;
+    padding-bottom: var(--space-xxxl);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

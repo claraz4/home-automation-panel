@@ -1,0 +1,11 @@
+.name-status-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-text {
+    color: var(--gray-400);
+    font-weight: 500;
+}

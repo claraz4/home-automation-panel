@@ -1,0 +1,18 @@
+.schedule-info-subcontainer {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+}
+
+.schedule-time-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: var(--space-xs);
+}
+
+.schedule-time-container p {
+    color: var(--primary-500);
+    font-weight: 500;
+}

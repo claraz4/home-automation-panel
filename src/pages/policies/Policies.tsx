@@ -5,9 +5,12 @@ import { api } from "../../api/api";
 import ElementBox from "../../shared/components/element-box/ElementBox";
 import Conditions from "./components/Conditions";
 import "./styles/policies.css";
+import PolicyInfoSlider from "./components/PolicyInfoSlider";
 
 export default function Policies() {
   const [policies, setPolicies] = useState<PolicyDTO[]>([]);
+  const [showPoliyInfo, setShowPolicyInfo] = useState(false);
+  const [clickedPolicyId, setClickedPolicyId] = useState<number | null>(null);
 
   const getPolicies = async () => {
     try {
@@ -21,6 +24,11 @@ export default function Policies() {
   useEffect(() => {
     void getPolicies();
   }, []);
+
+  const handleClick = (policyId: number) => {
+    setClickedPolicyId(policyId);
+    setShowPolicyInfo(true);
+  };
 
   return (
     <div className="navbar-page policy-page">
@@ -43,9 +51,15 @@ export default function Policies() {
                   source={policy.powerSourceName}
                 />
               }
+              onClick={() => handleClick(policy.id)}
             />
           ))}
       </div>
+      <PolicyInfoSlider
+        isOpen={showPoliyInfo}
+        onClose={() => setShowPolicyInfo(false)}
+        policyId={clickedPolicyId}
+      />
     </div>
   );
 }

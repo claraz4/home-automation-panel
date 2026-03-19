@@ -75,3 +75,11 @@
 .policy-element-box-info-container {
     row-gap: var(--space-sm);
 }
+
+.plug-element-box-container {
+    padding: var(--space-sm);
+}
+
+.plug-element-icon-container {
+    padding: 0;
+}
