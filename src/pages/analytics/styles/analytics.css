@@ -1,0 +1,12 @@
+.analytics-page {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-lg);
+}
+
+.analytics-content {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-md);
+    overflow: hidden;
+}

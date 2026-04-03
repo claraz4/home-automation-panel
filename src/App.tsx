@@ -13,6 +13,7 @@ import SinglePlug from "./pages/single-plug/SinglePlug";
 import Schedules from "./pages/schedules/Schedules";
 import Policies from "./pages/policies/Policies";
 import Plugs from "./pages/plugs/Plugs";
+import Analytics from "./pages/analytics/Analytics";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
           { path: "/plugs/:plugId", element: <SinglePlug /> },
           { path: "/schedules", element: <Schedules /> },
           { path: "/policies", element: <Policies /> },
+          { path: "/analytics", element: <Analytics /> },
         ],
       },
     ],

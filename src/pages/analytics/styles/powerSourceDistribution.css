@@ -1,0 +1,11 @@
+.power-source-heading {
+    align-self: flex-start;
+}
+
+.power-source-distribution-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+    overflow: hidden;
+    flex: 1;
+}

@@ -107,3 +107,13 @@ button:hover {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
+.recharts-wrapper,
+.recharts-surface,
+.recharts-sector,
+.recharts-layer,
+.recharts-bar,
+.recharts-zIndex-layer_300 {
+    outline: none !important;
+    stroke: none !important;
+}
