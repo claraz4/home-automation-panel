@@ -1,0 +1,56 @@
+.cost-overview {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+    height: 100%;
+}
+
+.cost-header {
+    padding: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xs);
+}
+
+.monthly-bill-title {
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.total-costs-container {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-md);
+    width: 100%;
+    height: 100%;
+}
+
+.cost-per-source-container {
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-sm);
+    flex: 1;
+}
+
+.cost-per-source-title {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-sm);
+    align-items: center;
+}
+
+.cost-per-source-icon-container {
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xs) var(--space-xxs);
+    border-width: 0;
+}
+
+.cost-per-source-name {
+    font-size: 16px;
+    font-weight: 600;
+}

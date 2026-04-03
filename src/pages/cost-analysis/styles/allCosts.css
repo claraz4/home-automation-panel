@@ -1,0 +1,16 @@
+.all-costs-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+    background-color: white;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    flex: 1;
+    height: 100%;
+}
+
+.all-costs-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-sm);
+}

@@ -1,0 +1,14 @@
+.cost-analysis-content {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-lg);
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.cost-analysis-page {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-lg);
+}

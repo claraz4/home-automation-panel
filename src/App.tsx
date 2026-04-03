@@ -14,6 +14,7 @@ import Schedules from "./pages/schedules/Schedules";
 import Policies from "./pages/policies/Policies";
 import Plugs from "./pages/plugs/Plugs";
 import Analytics from "./pages/analytics/Analytics";
+import CostAnalysis from "./pages/cost-analysis/CostAnalysis";
 
 const router = createBrowserRouter([
   { path: "/login", element: <Login /> },
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
           { path: "/schedules", element: <Schedules /> },
           { path: "/policies", element: <Policies /> },
           { path: "/analytics", element: <Analytics /> },
+          { path: "/costs", element: <CostAnalysis /> },
         ],
       },
     ],

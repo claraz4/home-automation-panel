@@ -1,0 +1,32 @@
+.segmented-control-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--gray-100);
+    border-radius: var(--radius-md);
+    width: 100%;
+}
+
+.segmented-control-option {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: var(--space-xxs) var(--space-sm);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.segmented-control-option.selected {
+    background-color: var(--primary-500);
+    border-radius: var(--radius-md);
+}
+
+.segmented-control-text {
+    color: var(--gray-500);
+}
+
+.segmented-control-text-selected {
+    color: white;
+}
